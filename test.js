@@ -23,7 +23,5 @@ client.connect()
     .then(findResult => {
         console.log('Found documents =>', findResult);
     })
-    .then(() => { console.log('End 1.');})
-    .then(() => { console.log('End 2.');})
     .catch((err) =>  console.log(err))
     .finally(() => client.close());
