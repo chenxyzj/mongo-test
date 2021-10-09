@@ -26,6 +26,20 @@ client.connect()
     })
     .then(findResult => {
         console.log('Found documents =>', findResult);
+        const db = client.db(dbName);
+        console.log('open db successfully.');
+        const collection = db.collection('documents');
+        console.log('open collection successfully.');        
+        return collection.deleteMany({});
     })
+    .then(result => {
+        console.log("Deleted documents:", result);
+        const db = client.db(dbName);
+        console.log('open db successfully.');
+        const collection = db.collection('documents');
+        console.log('open collection successfully.');        
+        return collection.find({}).toArray;
+    })
+    .then(result => console.log('Found docments is:',result))    
     .catch((err) =>  console.log(err))
     .finally(() => client.close());
