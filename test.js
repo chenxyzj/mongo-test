@@ -14,11 +14,15 @@ client.connect()
         console.log('create db successfully.');
         const collection = db.collection('documents');
         console.log('create collection successfully.');
-        return {collection:collection,result:collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }])}
+        return collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }]);
     })
     .then((result) => {
-        console.log('Inserted results is:',result.result);
-        return result.collection.find({}).toArray();
+        console.log('Inserted results is:',result);
+        const db = client.db(dbName);
+        console.log('open db successfully.');
+        const collection = db.collection('documents');
+        console.log('open collection successfully.');        
+        return collection.find({}).toArray();
     })
     .then(findResult => {
         console.log('Found documents =>', findResult);
