@@ -31,7 +31,9 @@ client.connect((err) => {
                     if(err) return console.log(err);
 
                     console.log('Found docments is:',findResult);
-                    client.close();
+                    client.close(() => {
+                        console.log('Disconnected from mongodb.')
+                    });
                 });
             });
         });
