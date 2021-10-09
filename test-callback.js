@@ -31,7 +31,7 @@ client.connect(() => {
                 console.log('open db successfully.');
                 const collection = db.collection('documents');
                 console.log('open collection successfully.');        
-                collection.find({}).toArray((err,findResult => {
+                collection.find({}).toArray((err,findResult) => {
                     console.log('Found docments is:',findResult);
                     client.close();
                 });
