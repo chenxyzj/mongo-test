@@ -14,8 +14,8 @@ client.connect()
         console.log('create collection successfully.');
         collection.insertMany([{ a: 1 }, { a: 2 }, { a: 3 }])
         .then((result) => console.log('Result is:',result))
-        .then(() => client.close())
-        .catch((err) =>  console.log(err));
+        .catch((err) =>  console.log(err))
+        .finally(() => client.close());
     })
     .then((result) => console.log('Result is:',result))
     .catch((err) =>  console.log(err));
