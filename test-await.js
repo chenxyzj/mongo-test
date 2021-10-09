@@ -5,8 +5,7 @@ const url = 'mongodb://localhost:27017';
 const client = new MongoClient(url);
 
 const dbName = 'myProject';
-// const db;
-// const collection;
+
 async function doIT(){
     try {
         await client.connect();
