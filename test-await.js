@@ -9,7 +9,7 @@ const dbName = 'myProject';
 async function doIT(){
     try {
         await client.connect();
-        const db = client.db(dbName);
+        // const db = await client.db(dbName);
         console.log('create db successfully.');
         const collection = db.collection('documents');
         console.log('create collection successfully.');
