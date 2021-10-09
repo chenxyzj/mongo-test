@@ -40,6 +40,6 @@ client.connect()
         console.log('open collection successfully.');        
         return collection.find({}).toArray;
     })
-    .then(result => console.log('Found docments is:',result))    
+    .then(findResult => console.log('Found docments is:',findResult))    
     .catch((err) =>  console.log(err))
     .finally(() => client.close());
